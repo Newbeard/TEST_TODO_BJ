@@ -5,7 +5,7 @@ const { isValidEmail, isValidPassword } = require('../helpers/validator');
 const registerUserPost = async (req, res) => {
   try {
     const {
-      email, password, confirmPassword,
+      email, password, confirmPassword, name,
     } = req.body;
     const isUserExist = await User.findOne({
       where: { email },
@@ -24,7 +24,7 @@ const registerUserPost = async (req, res) => {
     }
     const hashPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
-      email, password: hashPassword, isAdmin: false, isApproved: true, emailIsApproved: true,
+      email, password: hashPassword, isAdmin: false, name,
     });
     req.session.user = user;
     req.session.isSession = true;
