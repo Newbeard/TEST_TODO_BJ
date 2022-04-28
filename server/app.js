@@ -12,10 +12,6 @@ config(app);
 
 app.use('/', indexRouter);
 
-app.get('*', (req, res) => {
-  res.status(404);
-});
-
 app.listen(PORT, async () => {
   checkConect(PORT);
 });

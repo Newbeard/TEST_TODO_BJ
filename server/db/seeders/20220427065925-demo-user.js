@@ -7,6 +7,7 @@ module.exports = {
       name: 'Admin',
       email: 'admin@admin.ru',
       password: hashPassword,
+      isAdmin: true,
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});

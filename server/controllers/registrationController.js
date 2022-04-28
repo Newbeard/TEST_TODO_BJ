@@ -28,7 +28,7 @@ const registerUserPost = async (req, res) => {
     });
     req.session.user = user;
     req.session.isSession = true;
-    res.json({ id: user.id });
+    res.json({ id: user.id, isAdmin: user.isAdmin });
   } catch (error) {
     console.log(error.message);
     res.status(401)
