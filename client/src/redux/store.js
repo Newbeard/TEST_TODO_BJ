@@ -5,8 +5,12 @@ import { composeWithDevTools } from '@redux-devtools/extension';
 
 
 const initialState = {
-  task: [],
-  isAdmin: false
+  user: {
+    values: {},
+    isLoading: false,
+    error: null
+  },
+  tasks: {},  
 }
 
 export const store = createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)))
