@@ -12,13 +12,14 @@ code {
     monospace;
 }
 
-.wraper {
+.wrapper {
   min-height:100vh;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   }
 .btnNewTask {
-  width: 100px;
+  min-width: 100px;
   height: 40px;
 }
 .error{
@@ -38,7 +39,11 @@ code {
 .pagination:hover{
   border: solid 2px rgb(68, 56, 56);
 }
-
+.btn-pagination{
+  outline:0 !important;
+  border: 0;
+  background-color: #fff;
+}
  a:hover { 
    text-decoration: none; 
   }
@@ -75,3 +80,36 @@ code {
   background-position: left .7em top 30%, 0 0; 
   padding: .6em .8em .5em 1.4em; 
   }
+
+  .card-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 200px;
+    margin: 0;
+
+  }
+.card-list{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  border: 1px solid #666;
+  padding: 10px;
+  margin-bottom: 20px;
+   
+}
+.card-item-btn-box{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.card-item-btn{
+  justify-content: center;
+  width: 80px;
+  margin: 7px;
+}
+.uk-inline{
+  width: 100%;
+  display: flex;
+}

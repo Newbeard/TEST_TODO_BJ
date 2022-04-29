@@ -1,8 +1,14 @@
 import React from 'react';
+import {newTaskFromServer } from '../../redux/actions/task.action'
+import { useDispatch} from 'react-redux'
 
 function NewTask(props) {
-const handlerSubmit = (event) => {
+  const dispatch = useDispatch()
+  const handlerSubmit = (event) => {
   event.preventDefault();
+  const form = event.target;
+  const payload = Object.fromEntries(new FormData(form));
+  dispatch(newTaskFromServer(payload));
 }
 
   return (
@@ -18,7 +24,7 @@ const handlerSubmit = (event) => {
 				</div>
 			
 				<div className="uk-inline">
-					<input className="uk-input" id="task" type="text" name="task" placeholder="New task" autoComplete="off"/>
+					<input className="uk-input" id="task" type="text" name="title" placeholder="New task" autoComplete="off"/>
 				</div>
 			
 				<button className="uk-button uk-button-secondary btnNewTask">Add</button>

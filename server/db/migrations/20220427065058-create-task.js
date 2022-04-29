@@ -19,6 +19,9 @@ module.exports = {
       status: {
         type: Sequelize.TEXT,
       },
+      isApproved: {
+        type: Sequelize.TEXT,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

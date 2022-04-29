@@ -20,6 +20,9 @@ module.exports = (sequelize, DataTypes) => {
     status: {
       type: DataTypes.TEXT,
     },
+    isApproved: {
+      type: DataTypes.TEXT,
+    },
   }, {
     sequelize,
     modelName: 'Task',

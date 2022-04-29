@@ -6,20 +6,18 @@ function Pagination({amountTask}) {
   const numberPages = [];
   const dispatch = useDispatch();
 
-  for (let i = 1; i <= Math.ceil(amountTask/2); i+=1){
+  for (let i = 1; i <= Math.ceil(amountTask/3); i+=1){
     numberPages.push(i)
   }
 
-  const handlerClick = (event) =>{
-    event.preventDefault()
-    const payload = {page:+event.target.innerText};
-
-    dispatch(pageTaskFromServer(payload))
+  const handlerClickPage = (event) =>{
+   const payload = {page:+event.target.innerText};
+   dispatch(pageTaskFromServer(payload))
   }
   return (
     
 <ul className="uk-pagination uk-flex-center uk-position-bottom uk-margin-medium-top">
-   {numberPages?.map((page) => <div className="pagination" key={page}><li><a className="uk-text-muted" href="#" onClick={handlerClick}>{page}</a></li></div>)}
+   {numberPages?.map((page) => <div className="pagination" key={page}><li><button className="btn-pagination" onClick={handlerClickPage}>{page}</button></li></div>)}
 </ul>
   
   );
