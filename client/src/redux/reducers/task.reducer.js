@@ -7,6 +7,7 @@ export function taskReducer(state = [], action) {
     case INIT_TASK: {
       return payload
     }
+
     default:
       return state
   }

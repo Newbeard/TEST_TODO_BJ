@@ -3,6 +3,7 @@ module.exports = (req, res, next) => {
     res.locals.id = req.session.user.id;
     res.locals.name = req.session.user.name;
     res.locals.email = req.session.user.email;
+    res.locals.isAdmin = req.session.user.isAdmin;
     res.locals.isSession = req.session.isSession;
   } else {
     res.locals.isSession = false;
