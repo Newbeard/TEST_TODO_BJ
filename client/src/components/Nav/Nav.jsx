@@ -17,19 +17,19 @@ export default function Nav() {
   }
   return (
   <nav className="uk-navbar-container uk-margin navbeckgraund" uk-navbar="mode: click">
-    {!values.id? <>
+    {!values.id? 
       <div className="uk-navbar-left">
        <ul className="uk-navbar-nav">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/login">SignIn</Link></li>
         <li><Link to="/registation">SignUp</Link></li>
        </ul>
-      </div>
-    </>:
+      </div>:
         <div className="uk-navbar-left">
         <ul className="uk-navbar-nav">
          <li><Link to="/">Home</Link></li>
-         <li><a onClick={hendlerClick}>Logout</a></li>
+         {values.isAdmin && <li><Link to="#">Admin</Link></li>}
+         <li><Link to="#" href="#" onClick={hendlerClick}>Logout</Link></li>
         </ul>
        </div>
     }

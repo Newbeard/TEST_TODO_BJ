@@ -34,14 +34,14 @@ export default function Login() {
 			<div className="uk-margin">
 				<div className="uk-inline">
 					<span className="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail" />
-					<input className="uk-input" id="email" type="text" name="email" placeholder="Email" autoFocus autoComplete="off"/>
+					<input className="uk-input" id="email" type="text" name="email" placeholder="Email" autoFocus autoComplete="off" required />
 				</div>
 			</div>
 
 			<div className="uk-margin">
 				<div className="uk-inline">
 					<span className="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock" />
-					<input className="uk-input" id="password" type="password"  name="password" placeholder="Password" autoComplete="off"/>
+					<input className="uk-input" id="password" type="password"  name="password" placeholder="Password" autoComplete="off" required />
 				</div>
 			</div>
 			<center>

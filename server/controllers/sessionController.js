@@ -3,7 +3,7 @@ const sessionController = async (req, res) => {
     if (req.session.user) {
       res.json({
         id: req.session.user.id,
-        isAdmin: req.session.user.id,
+        isAdmin: req.session.user.isAdmin,
       });
     }
     else {

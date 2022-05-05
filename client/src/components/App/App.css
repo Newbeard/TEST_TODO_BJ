@@ -89,6 +89,30 @@ code {
     margin: 0;
 
   }
+  .card-item-title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 300px;
+    margin: 0;
+
+  }
+  .card-item-name{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100px;
+    margin: 0;
+
+  }
+  .card-item-status{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 110px;
+    margin: 0;
+
+  }
 .card-list{
   display: flex;
   align-content: center;
@@ -103,6 +127,8 @@ code {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  width: 100px;
+
 }
 .card-item-btn{
   justify-content: center;
@@ -112,4 +138,19 @@ code {
 .uk-inline{
   width: 100%;
   display: flex;
+}
+.input-approv-task{
+ border: 0;
+}
+.btn-logout {
+  color: #999;
+  text-transform: uppercase;
+  transition: .1s ease-in-out;
+  transition-property: color,background-color;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
 }

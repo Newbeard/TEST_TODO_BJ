@@ -21,17 +21,10 @@ const taskApproved = async (req, res) => {
   } = req.body;
   const offset = (page - 1) * pageSize;
   try {
-    if (!title) {
-      await Task.update(
-        { isApproved: 'Проверено' },
-        { where: { id } },
-      );
-    } else {
-      await Task.update(
-        { isApproved: 'Проверено', title },
-        { where: { id } },
-      );
-    }
+    await Task.update(
+      { isApproved: 'Проверено', title },
+      { where: { id } },
+    );
     const result = await Task.findAll();
     const tasks = await Task.findAll({
       order: [[paramsort2, paramsort1]],

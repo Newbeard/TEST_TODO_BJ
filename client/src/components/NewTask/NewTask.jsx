@@ -16,15 +16,15 @@ function NewTask(props) {
     	<form className="uk-flex" onSubmit={handlerSubmit}>
 		
 				<div className="uk-inline">
-					<input className="uk-input" type="text" id="name" name="name" placeholder="Name" autoComplete="off" />
+					<input className="uk-input" type="text" id="name" name="name" placeholder="Name" autoComplete="off" required  />
 		  	</div>
 
 				<div className="uk-inline">
-					<input className="uk-input" id="email" type="text" name="email" placeholder="Email" autoComplete="off" />
+					<input className="uk-input" id="email" type="email" name="email" placeholder="Email" autoComplete="off" required />
 				</div>
 			
 				<div className="uk-inline">
-					<input className="uk-input" id="task" type="text" name="title" placeholder="New task" autoComplete="off"/>
+					<input className="uk-input" id="task" type="text" name="title" placeholder="New task" autoComplete="off" required />
 				</div>
 			
 				<button className="uk-button uk-button-secondary btnNewTask">Add</button>
