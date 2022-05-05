@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const sessionConfig = require('./sessionConfig');
@@ -12,6 +13,7 @@ const config = (app) => {
     origin: ['http://localhost:3000', 'https://todo-test-bj.herokuapp.com/'],
     credentials: true,
   }));
+  app.use(express.static(path.join(process.env.PWD, 'build')));
   app.use(express.json());
   app.use(express.urlencoded({
     extended: true,
