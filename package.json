@@ -1,0 +1,21 @@
+{
+  "name": "test_todo_bj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd client && npm install && npm i && npm run build",
+    "start": "cd server && npm install && npm i && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Newbeard/TEST_TODO_BJ.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Newbeard/TEST_TODO_BJ/issues"
+  },
+  "homepage": "https://github.com/Newbeard/TEST_TODO_BJ#readme"
+}

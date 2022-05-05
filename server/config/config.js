@@ -1,5 +1,4 @@
 const express = require('express');
-const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -10,10 +9,9 @@ const cookiesCleaner = require('../middleware/cookiesCleaner');
 const config = (app) => {
   // USE
   app.use(cors({
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', 'https://todo-test-bj.herokuapp.com/'],
     credentials: true,
   }));
-  app.use(morgan('dev'));
   app.use(express.json());
   app.use(express.urlencoded({
     extended: true,
