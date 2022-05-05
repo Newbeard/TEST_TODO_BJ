@@ -26,7 +26,6 @@ function Task({tasks}) {
   const handlerClicApprov = (id,oldtitle) =>{
     const title = newTitle? newTitle: oldtitle;
     const payload ={id: id, paramsort1: selectRefsort.current.value,paramsort2: selectRefparam.current.value, page, title};
-    console.log(payload);
     dispatch(approvedTaskFromServer(payload))
     setTitle(null)
   }
