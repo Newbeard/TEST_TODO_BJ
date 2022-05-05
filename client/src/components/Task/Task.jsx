@@ -1,10 +1,11 @@
-import React, {useRef, useEffect } from 'react';
+import React, {useRef, useEffect,useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import {filterTaskFromServer, approvedTaskFromServer, completTaskFromServer } from '../../redux/actions/task.action'
 
 
 
 function Task({tasks}) {
+  const [newTitle, setTitle] = useState()
   const selectRefsort = useRef(null);
   const selectRefparam = useRef(null);
   const {page} = useSelector(state => state.tasks)
@@ -12,19 +13,26 @@ function Task({tasks}) {
   const dispatch = useDispatch()
 
   useEffect(() => {
-
   },[])
+
+  const handlerChengeApprov = (event) =>{
+    setTitle(event.target.value)
+  }
 
   const handlerClickSort =(event) =>{
     const payload = {paramsort1: selectRefsort.current.value ,paramsort2: selectRefparam.current.value, page}
     dispatch(filterTaskFromServer(payload))
   }
-  const handlerClicApprov = (event) =>{
-    const payload ={id: event.target.dataset.id, paramsort1: selectRefsort.current.value,paramsort2: selectRefparam.current.value, page};
+  const handlerClicApprov = (id,oldtitle) =>{
+    const title = newTitle? newTitle: oldtitle;
+    const payload ={id: id, paramsort1: selectRefsort.current.value,paramsort2: selectRefparam.current.value, page, title};
+    console.log(payload);
     dispatch(approvedTaskFromServer(payload))
+    setTitle(null)
   }
   const handlerClickComplet =(event) => {
     const payload ={id: event.target.dataset.id, paramsort1: selectRefsort.current.value,paramsort2: selectRefparam.current.value, page}
+   console.log(payload);
     dispatch(completTaskFromServer(payload))
   }
 
@@ -45,13 +53,15 @@ function Task({tasks}) {
     <div className="tasks">
       {tasks?.map((task) => 
       <div key={task.id} className="card-list"> 
-        <div className="card-item">{task.name}</div>
+        <div className="card-item-name">{task.name}</div>
         <div className="card-item">{task.email}</div>
-        <div className="card-item">{task.title}</div>
-        <div className="card-item">{task.status}</div>
-        <div className="card-item">{task.isApproved}</div>
+        {!values.isAdmin?<div className="card-item-title">{task.title}</div>:
+        <div className="card-item-title"><input className="uk-input input-approv-task" onChange={handlerChengeApprov} defaultValue={task.title}></input></div>
+        }
+        <div className="card-item-status">{task.status}</div>
+        <div className="card-item-status">{task.isApproved}</div>
         {values.isAdmin && <div  className="card-item card-item-btn-box">
-          <button className="card-item-btn" data-id={task.id} onClick = {handlerClicApprov} >Approved</button>
+          <button className="card-item-btn" data-id={task.id} onClick = {(e) => handlerClicApprov(task.id, task.title)} >Approved</button>
           <button className="card-item-btn" data-id={task.id} onClick = {handlerClickComplet} >Сompleted</button>
         </div>}
       </div>

@@ -10,14 +10,14 @@ function Pagination({amountTask}) {
     numberPages.push(i)
   }
 
-  const handlerClickPage = (event) =>{
-   const payload = {page:+event.target.innerText};
+  const handlerClickPage = (page) =>{
+   const payload = {page:page};
    dispatch(pageTaskFromServer(payload))
   }
   return (
     
 <ul className="uk-pagination uk-flex-center uk-position-bottom uk-margin-medium-top">
-   {numberPages?.map((page) => <div className="pagination" key={page}><li><button className="btn-pagination" onClick={handlerClickPage}>{page}</button></li></div>)}
+   {numberPages?.map((page) => <div className="pagination" key={page}><li><button className="btn-pagination" onClick={(e) => handlerClickPage(page)}>{page}</button></li></div>)}
 </ul>
   
   );

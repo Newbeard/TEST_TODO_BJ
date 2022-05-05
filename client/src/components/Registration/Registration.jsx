@@ -30,21 +30,21 @@ export default function Registration() {
 			<div className="uk-margin">
 				<div className="uk-inline">
 					<span className="uk-form-icon uk-form-icon-flip" uk-icon="icon: user" />
-					<input className="uk-input" type="text" id="name" name="name" placeholder="Name" autoFocus autoComplete="off"  />
+					<input className="uk-input" type="text" id="name" name="name" placeholder="Name" autoFocus autoComplete="off" required />
 				</div>
 			</div>
 
 			<div className="uk-margin">
 				<div className="uk-inline">
 					<span className="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail" />
-					<input className="uk-input" id="email" type="text" name="email" placeholder="Email" autoComplete="off" />
+					<input className="uk-input" id="email" type="text" name="email" placeholder="Email" autoComplete="off" required  />
 				</div>
 			</div>
 
 			<div className="uk-margin">
 				<div className="uk-inline">
 					<span className="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock" />
-					<input className="uk-input" id="password" type="password" name="password" placeholder="Password" autoComplete="off"/>
+					<input className="uk-input" id="password" type="password" name="password" placeholder="Password" autoComplete="off" required />
 				</div>
 			</div>
 
@@ -58,6 +58,7 @@ export default function Registration() {
 						name="confirmPassword"
 						placeholder="Confirm password"
             autoComplete="off"
+            required 
 					/>
 				</div>
 			</div>

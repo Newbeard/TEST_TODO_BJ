@@ -65,7 +65,7 @@ export const newTaskFromServer = (payload) => async (dispatch) => {
 
 export const completTaskFromServer = (payload) => async (dispatch) => {
   try {
-    const { data } = await axios.post('/task',payload)
+    const { data } = await axios.post('/task/complet',payload)
     data.page = payload.page
     dispatch(initTask(data))
   } catch (error) {
