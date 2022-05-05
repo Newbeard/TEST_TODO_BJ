@@ -32,7 +32,6 @@ function Task({tasks}) {
   }
   const handlerClickComplet =(event) => {
     const payload ={id: event.target.dataset.id, paramsort1: selectRefsort.current.value,paramsort2: selectRefparam.current.value, page}
-   console.log(payload);
     dispatch(completTaskFromServer(payload))
   }
 
